@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Authentication</string>
+    <string name="logo_txt">Смейся  \nи улыбайся каждый день</string>
+    <string name="sign_in">Есть аккаунт? Войти</string>
+    <string name="start_use">Начать пользоваться</string>
+</resources>
