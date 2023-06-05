@@ -11,5 +11,7 @@
     <color name="main_blue">#5D5FEF</color>
     <color name="light_hint_gray">#C1C1C1</color>
     <color name="red_error">#F34545</color>
+    <color name="stroke_gray">#F5F5F5</color>
+    <color name="solid_gray">#F7F7F8</color>
 
 </resources>
