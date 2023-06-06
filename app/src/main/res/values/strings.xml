@@ -19,4 +19,7 @@
     <string name="birthday">Дата рождения</string>
     <string name="phone">Номер телефона</string>
     <string name="registration">Зарегистрироваться</string>
+    <string name="create_password">Придумайте пароль</string>
+    <string name="repeat_password">Повторите пароль</string>
+    <string name="password_check_symbols">• Заглавная буква \n• Цифры \n• Специальные символы \n• Совпадение пароля </string>
 </resources>
