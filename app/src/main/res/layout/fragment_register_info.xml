@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.RegisterInfoFragment">
+
+    <EditText
+        android:id="@+id/et_name"
+        style="@style/fields_input_style"
+        android:layout_marginTop="50dp"
+        android:hint="@string/name"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/et_surname"
+        style="@style/fields_input_style"
+        android:layout_marginTop="20dp"
+        android:hint="@string/surname"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_name"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/et_birthday"
+        style="@style/fields_input_style"
+        android:layout_marginTop="20dp"
+        android:hint="@string/birthday"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_surname"
+        tools:ignore="TextFields" />
+
+    <EditText
+        android:id="@+id/et_phone"
+        style="@style/fields_input_style"
+        android:layout_marginTop="20dp"
+        android:hint="@string/phone"
+        android:inputType="phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_birthday"
+        tools:ignore="TextFields" />
+
+    <Button
+        android:id="@+id/register_btn"
+        style="@style/btn_login_style"
+        android:layout_marginTop="50dp"
+        android:text="@string/registration"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_phone" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

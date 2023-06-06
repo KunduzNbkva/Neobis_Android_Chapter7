@@ -11,4 +11,12 @@
     <string name="forget_password">Забыли пароль?</string>
     <string name="password_reset">Сброс пароля</string>
     <string name="next">Далее</string>
+    <string name="email_sent">На вашу почту \n«dojacat01.gmail.com» было \nотправлено письмо</string>
+    <string name="close">Закрыть</string>
+    <string name="register">Регистрация</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="birthday">Дата рождения</string>
+    <string name="phone">Номер телефона</string>
+    <string name="registration">Зарегистрироваться</string>
 </resources>
