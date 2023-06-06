@@ -7,7 +7,7 @@
 
 ## Functionality
 
-The following **required** functionality is completed:
+The following functionality is completed:
 * [x] Users can create a new account by providing their email,password.
 * [x] Registered users can log into their accounts
 * [x] The app validates user's inputs
