@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/et_email"
+        android:id="@+id/et_email_layout"
         style="@style/fields_input_style"
         android:layout_marginTop="50dp"
         android:hint="@string/email"
@@ -37,7 +37,7 @@
         android:background="@drawable/fields_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email">
+        app:layout_constraintTop_toBottomOf="@+id/et_email_layout">
 
         <EditText
             android:id="@+id/et_password"

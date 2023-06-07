@@ -1,5 +1,6 @@
 package kg.kunduznbkva.authentication.data.model
 import com.google.gson.annotations.SerializedName
+import okhttp3.Response
 import java.util.Date
 
 data class UserEmail ( val email: String)

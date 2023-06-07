@@ -61,4 +61,9 @@
         <item name="android:fontFamily">@font/gothampro_black</item>
         <item name="android:textColor">#9CA4AB</item>
     </style>
+
+    <style name="animation">
+        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
+        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+    </style>
 </resources>

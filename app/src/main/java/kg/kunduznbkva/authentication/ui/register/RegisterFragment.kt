@@ -1,20 +1,29 @@
 package kg.kunduznbkva.authentication.ui.register
 
-import android.app.DatePickerDialog
+import android.annotation.SuppressLint
+import android.app.AlertDialog
+import android.app.Dialog
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import kg.kunduznbkva.authentication.R
+import kg.kunduznbkva.authentication.data.model.UserEmail
+import kg.kunduznbkva.authentication.databinding.DialogPasswordResetBinding
 import kg.kunduznbkva.authentication.databinding.FragmentRegisterBinding
-import java.util.*
+
 
 class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
+    private val viewModel: RegisterFragmentViewModel by viewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,8 +36,43 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         checkInputEmail()
+        registerEmail()
+        checkResponse()
         backBtn()
+
     }
+
+    @SuppressLint("ResourceAsColor")
+    private fun checkResponse() {
+        viewModel.responseLiveEmailData.observe(viewLifecycleOwner) { response ->
+            if (response != null) {
+                showDialog()
+            } else {
+                binding.etEmailLayout.boxStrokeColor = R.color.red_error
+                binding.etEmailLayout.defaultHintTextColor = ColorStateList.valueOf(R.color.red_error)
+                binding.etEmailLayout.error ="Неправильно ввели данные, попробуйте еще раз"
+            }
+        }
+    }
+
+    private fun showDialog() {
+        val dialog = Dialog(requireContext())
+        val dialogBinding = DialogPasswordResetBinding.inflate(layoutInflater)
+        val dialogBuilder = AlertDialog.Builder(requireContext())
+            .setView(dialogBinding.root)
+        dialog.setCancelable(false)
+        dialog.window?.attributes!!.windowAnimations = R.style.animation
+        dialogBuilder
+            .setPositiveButton(getText(R.string.close)) { dialog, which ->
+               Toast.makeText(requireContext(),"Закрыто", Toast.LENGTH_SHORT)
+            }
+    }
+
+    private fun registerEmail() {
+        val email = binding.etEmail.text.toString()
+        viewModel.registerEmail(UserEmail(email))
+    }
+
 
     private fun backBtn() {
         binding.backBtn.setOnClickListener {
