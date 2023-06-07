@@ -1,4 +1,4 @@
-package kg.kunduznbkva.authentication.ui.register
+package kg.kunduznbkva.authentication.ui
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
@@ -12,8 +12,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import kg.kunduznbkva.authentication.MainActivity
 import kg.kunduznbkva.authentication.R
 import kg.kunduznbkva.authentication.data.model.UserEmail
 import kg.kunduznbkva.authentication.databinding.DialogPasswordResetBinding
@@ -22,7 +22,7 @@ import kg.kunduznbkva.authentication.databinding.FragmentRegisterBinding
 
 class RegisterFragment : Fragment() {
     private lateinit var binding: FragmentRegisterBinding
-    private val viewModel: RegisterFragmentViewModel by viewModels()
+    private lateinit var viewModel: UsersViewModel
 
 
     override fun onCreateView(
@@ -35,6 +35,7 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = (activity as MainActivity).viewModel
         checkInputEmail()
         registerEmail()
         checkResponse()
